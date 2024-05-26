@@ -5,28 +5,27 @@ namespace UI
 {
    public class SoungButtonManager : MonoBehaviour
    {
-      [SerializeField] private AudioSource soungButtonEnter;
-      [SerializeField] private AudioSource soungButtonClick;
-
       [SerializeField] private AudioClip [] clip;
-
-
+      
+      private AudioSource _soungButton;
+      
       private void Start()
       {
-         clip = GetComponent<AudioClip[]>();
+         
+         _soungButton = GetComponent<AudioSource>();
       }
 
       public void EnterButtonSoungCanvace()
       {
-         soungButtonEnter.clip = clip[0];
-         soungButtonEnter.Play();
+         _soungButton.clip = clip[0];
+         _soungButton.Play();
 
       }
 
       public void ClickButtonSoundCanvace()
       {
-         soungButtonClick.clip = clip[1];
-         soungButtonClick.Play();
+         _soungButton.clip = clip[1];
+         _soungButton.Play();
       }
    }
 }
